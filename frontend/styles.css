@@ -1,0 +1,299 @@
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --ink: #172033;
+  --muted: #64748b;
+  --line: #dbe4f0;
+  --primary: #1769aa;
+  --primary-dark: #124d7e;
+  --accent: #1c7c54;
+  --warning: #b7791f;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.sidebar {
+  background: #172033;
+  color: white;
+  padding: 22px 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 8px;
+  background: #28a17a;
+  font-weight: 800;
+}
+
+.brand h1,
+.brand p,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.brand h1 {
+  font-size: 22px;
+}
+
+.brand p {
+  color: #b8c4d8;
+  font-size: 13px;
+}
+
+nav {
+  display: grid;
+  gap: 8px;
+}
+
+button,
+.link-button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+}
+
+button:hover,
+.link-button:hover {
+  background: var(--primary-dark);
+}
+
+.nav-button {
+  background: transparent;
+  color: #cbd4e6;
+  text-align: left;
+}
+
+.nav-button.active,
+.nav-button:hover {
+  background: #263552;
+  color: white;
+}
+
+.app {
+  padding: 28px;
+  overflow: auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: grid;
+  gap: 18px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.metric,
+.panel,
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(20, 32, 50, 0.05);
+}
+
+.metric {
+  padding: 16px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.metric span {
+  color: var(--muted);
+}
+
+.panel {
+  padding: 16px;
+}
+
+.panel header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: 18px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font: inherit;
+  background: white;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.inline-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eef3f8;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #f8fafc;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cards,
+.stack,
+.category-list {
+  display: grid;
+  gap: 12px;
+}
+
+.category-list {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.card {
+  padding: 14px;
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card p,
+.empty {
+  color: var(--muted);
+}
+
+.order-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.receive {
+  background: var(--accent);
+}
+
+.ship {
+  background: var(--warning);
+}
+
+#status {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  min-height: 20px;
+  color: var(--primary-dark);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 10px 26px rgba(20, 32, 50, 0.08);
+}
+
+#status:empty {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .panel-grid,
+  .inline-form {
+    grid-template-columns: 1fr;
+  }
+}

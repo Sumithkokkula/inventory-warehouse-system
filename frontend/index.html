@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Warehouse Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">S</span>
+        <div>
+          <h1>StockFlow</h1>
+          <p>Warehouse Control</p>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-button active" data-view="dashboard">Dashboard</button>
+        <button class="nav-button" data-view="products">Products</button>
+        <button class="nav-button" data-view="warehouses">Warehouses</button>
+        <button class="nav-button" data-view="suppliers">Suppliers</button>
+        <button class="nav-button" data-view="inventory">Inventory</button>
+        <button class="nav-button" data-view="orders">Orders</button>
+        <button class="nav-button" data-view="logistics">Logistics Data</button>
+      </nav>
+    </aside>
+
+    <main class="app">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Inventory + Warehouse Management</p>
+          <h2 id="page-title">Dashboard</h2>
+        </div>
+        <button id="refresh-button">Refresh</button>
+      </section>
+
+      <section id="dashboard" class="view active">
+        <div class="metrics" id="metrics"></div>
+
+        <div class="panel-grid">
+          <article class="panel">
+            <header>
+              <h3>Recent Stock Movements</h3>
+            </header>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Product</th>
+                    <th>Warehouse</th>
+                    <th>Qty</th>
+                    <th>Note</th>
+                  </tr>
+                </thead>
+                <tbody id="movement-rows"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <header>
+              <h3>Warehouse Stock</h3>
+            </header>
+            <div id="warehouse-stock-list" class="stack"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="products" class="view">
+        <article class="panel">
+          <header>
+            <h3>Add Product</h3>
+          </header>
+          <form id="product-form" class="grid-form">
+            <input name="sku" placeholder="SKU" required />
+            <input name="name" placeholder="Product name" required />
+            <input name="category" placeholder="Category" />
+            <input name="cost_price" type="number" step="0.01" placeholder="Cost price" />
+            <input name="selling_price" type="number" step="0.01" placeholder="Selling price" />
+            <input name="min_stock_level" type="number" placeholder="Min stock" />
+            <button>Add Product</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <header>
+            <h3>Products</h3>
+            <a class="link-button" href="http://127.0.0.1:8000/products/export-csv">Export CSV</a>
+          </header>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>SKU</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Cost</th>
+                  <th>Price</th>
+                  <th>Min</th>
+                </tr>
+              </thead>
+              <tbody id="product-rows"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section id="warehouses" class="view">
+        <article class="panel">
+          <header>
+            <h3>Add Warehouse</h3>
+          </header>
+          <form id="warehouse-form" class="inline-form">
+            <input name="name" placeholder="Warehouse name" required />
+            <input name="location" placeholder="Location" />
+            <button>Add Warehouse</button>
+          </form>
+        </article>
+        <div id="warehouse-list" class="cards"></div>
+      </section>
+
+      <section id="suppliers" class="view">
+        <article class="panel">
+          <header>
+            <h3>Add Supplier</h3>
+          </header>
+          <form id="supplier-form" class="grid-form">
+            <input name="name" placeholder="Supplier name" required />
+            <input name="email" placeholder="Email" />
+            <input name="phone" placeholder="Phone" />
+            <input name="address" placeholder="Address" />
+            <button>Add Supplier</button>
+          </form>
+        </article>
+        <div id="supplier-list" class="cards"></div>
+      </section>
+
+      <section id="inventory" class="view">
+        <article class="panel">
+          <header>
+            <h3>Adjust Stock</h3>
+          </header>
+          <form id="inventory-form" class="grid-form">
+            <input name="product_id" type="number" placeholder="Product ID" required />
+            <input name="warehouse_id" type="number" placeholder="Warehouse ID" required />
+            <input name="quantity" type="number" placeholder="Quantity +/-" required />
+            <input name="note" placeholder="Note" />
+            <button>Adjust Stock</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <header>
+            <h3>Low Stock</h3>
+          </header>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Name</th>
+                  <th>Qty</th>
+                  <th>Min</th>
+                </tr>
+              </thead>
+              <tbody id="low-stock-rows"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section id="orders" class="view">
+        <div class="panel-grid">
+          <article class="panel">
+            <header>
+              <h3>Create Purchase Order</h3>
+            </header>
+            <form id="purchase-form" class="grid-form">
+              <input name="supplier_id" type="number" placeholder="Supplier ID" required />
+              <input name="warehouse_id" type="number" placeholder="Warehouse ID" required />
+              <input name="product_id" type="number" placeholder="Product ID" required />
+              <input name="quantity" type="number" placeholder="Quantity" required />
+              <input name="unit_cost" type="number" step="0.01" placeholder="Unit cost" />
+              <button>Create PO</button>
+            </form>
+            <div id="purchase-list" class="stack"></div>
+          </article>
+
+          <article class="panel">
+            <header>
+              <h3>Create Sales Order</h3>
+            </header>
+            <form id="sales-form" class="grid-form">
+              <input name="customer_name" placeholder="Customer name" required />
+              <input name="warehouse_id" type="number" placeholder="Warehouse ID" required />
+              <input name="product_id" type="number" placeholder="Product ID" required />
+              <input name="quantity" type="number" placeholder="Quantity" required />
+              <input name="unit_price" type="number" step="0.01" placeholder="Unit price" />
+              <button>Create SO</button>
+            </form>
+            <div id="sales-list" class="stack"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="logistics" class="view">
+        <article class="panel">
+          <header>
+            <h3>Kaggle Logistics Dataset</h3>
+            <button id="import-logistics-button">Import CSV</button>
+            
+
+          </header>
+          <div class="metrics" id="logistics-metrics"></div>
+          <div id="category-list" class="category-list"></div>
+        </article>
+
+        <article class="panel">
+          <header>
+            <h3>Top KPI Items</h3>
+          </header>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Category</th>
+                  <th>Stock</th>
+                  <th>Reorder</th>
+                  <th>Zone</th>
+                  <th>Fulfillment</th>
+                  <th>Orders</th>
+                  <th>KPI</th>
+                </tr>
+              </thead>
+              <tbody id="logistics-rows"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <p id="status" role="status"></p>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
