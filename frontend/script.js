@@ -1,5 +1,4 @@
 const API_URL = "http://127.0.0.1:8000";
-
 const state = {
   products: [],
   warehouses: [],
@@ -350,8 +349,7 @@ document.addEventListener("click", async (event) => {
     await refreshAll();
     showStatus(`Purchase order #${purchaseId} received`);
   }
-
-  if (salesId) {
+if (salesId) {
     await request(`/sales-orders/${salesId}/ship`, { method: "POST" });
     await refreshAll();
     showStatus(`Sales order #${salesId} shipped`);
