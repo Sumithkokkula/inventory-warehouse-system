@@ -7,7 +7,6 @@ const state = {
   salesOrders: [],
   logisticsItems: [],
 };
-
 const statusEl = document.querySelector("#status");
 const pageTitle = document.querySelector("#page-title");
 
