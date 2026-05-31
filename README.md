@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 </p>
 
-> A full-stack system to manage products, warehouses, suppliers, and order workflows — with a live dashboard showing real-time KPIs, stock alerts, and movement tracking across **3,200+ inventory records**.
+> A full-stack system to manage products, warehouses, suppliers, and order workflows with a live dashboard showing real-time KPIs, stock alerts, and movement tracking across **3,200+ inventory records**.
 
 ---
 
@@ -17,15 +17,15 @@ Businesses managing multiple warehouses and suppliers often rely on spreadsheets
 
 ---
 
-## ✨ Features
+## Features
 
-- 📦 **Product & warehouse management** — track stock levels, warehouse capacity, and supplier info
-- 🔄 **Order workflow** — create, process, and fulfill orders with status tracking
-- 🚨 **Low-stock alerts** — automatic notifications when inventory drops below threshold
-- 📊 **Live KPI dashboard** — stock movement, fulfillment rates, and performance metrics
-- 📈 **Demand forecasting** — analyze 3,200+ records to surface reorder signals
-- 🔌 **REST API** — full CRUD for inventory, orders, warehouses, and suppliers
-- 🔁 **Inventory sync** — converts raw dataset entries into structured operational data
+-  **Product & warehouse management** — track stock levels, warehouse capacity, and supplier info
+- **Order workflow** — create, process, and fulfill orders with status tracking
+- **Low-stock alerts** — automatic notifications when inventory drops below threshold
+- **Live KPI dashboard** — stock movement, fulfillment rates, and performance metrics
+- **Demand forecasting** — analyze 3,200+ records to surface reorder signals
+- **REST API** — full CRUD for inventory, orders, warehouses, and suppliers
+- **Inventory sync** — converts raw dataset entries into structured operational data
 
 ---
 
@@ -60,7 +60,7 @@ inventory-warehouse-system/
 
 ---
 
-## 📡 API Endpoints
+📡 API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
