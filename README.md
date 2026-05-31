@@ -104,13 +104,6 @@ Open `http://localhost:3000`
 
 ---
 
-## 🔮 Future Improvements
-
-- [ ] Add user authentication (JWT)
-- [ ] Barcode/QR code scanning for stock updates
-- [ ] Migrate to PostgreSQL for multi-user production use
-- [ ] Add email notifications for low-stock alerts
-- [ ] Export reports as PDF / Excel
 
 ---
 
