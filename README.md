@@ -19,13 +19,13 @@ Businesses managing multiple warehouses and suppliers often rely on spreadsheets
 
 ## Features
 
--  **Product & warehouse management** — track stock levels, warehouse capacity, and supplier info
-- **Order workflow** — create, process, and fulfill orders with status tracking
-- **Low-stock alerts** — automatic notifications when inventory drops below threshold
-- **Live KPI dashboard** — stock movement, fulfillment rates, and performance metrics
+-  **Product & warehouse management** -track stock levels, warehouse capacity, and supplier info
+- **Order workflow**-create, process, and fulfill orders with status tracking
+- **Low-stock alerts**-automatic notifications when inventory drops below threshold
+- **Live KPI dashboard** -stock movement, fulfillment rates, and performance metrics
 - **Demand forecasting** — analyze 3,200+ records to surface reorder signals
-- **REST API** — full CRUD for inventory, orders, warehouses, and suppliers
-- **Inventory sync** — converts raw dataset entries into structured operational data
+- **REST API** - Full CRUD for inventory, orders, warehouses, and suppliers
+- **Inventory sync** -converts raw dataset entries into structured operational data
 
 ---
 
