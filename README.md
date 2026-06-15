@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 </p>
 
-> A full-stack system to manage products, warehouses, suppliers, and order workflows with a live dashboard showing real-time KPIs, stock alerts, and movement tracking across **3,200+ inventory records**.
+A full-stack system to manage products, warehouses, suppliers, and order workflows with a live dashboard showing real-time KPIs, stock alerts, and movement tracking across **3,200+ inventory records**.
 
 ---
 
