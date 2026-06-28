@@ -1,5 +1,5 @@
 item_id,category,stock_level,reorder_point,reorder_frequency_days,lead_time_days,daily_demand,demand_std_dev,item_popularity_score,storage_location_id,zone,picking_time_seconds,handling_cost_per_unit,unit_price,holding_cost_per_unit_day,stockout_count_last_month,order_fulfillment_rate,total_orders_last_month,turnover_ratio,layout_efficiency_score,last_restock_date,forecasted_demand_next_7d,KPI_score
-ITM10000,Pharma,283,21,4,4,49.85,1.56,0.43,L82,B,106,3.61,117.8,1.14,0,0.8,700,3.33,0.33,2024-02-17,184.37,0.556
+ITM10000,Pharma,283,21,4,4,49.86,1.56,0.43,L82,B,106,3.61,117.8,1.14,0,0.8,700,3.33,0.33,2024-02-17,184.37,0.556
 ITM10001,Automotive,301,52,9,6,23.34,2.55,0.69,L15,A,45,3.54,178.8,1.09,3,0.79,736,10.36,0.98,2024-10-01,221.94,0.723
 ITM10002,Groceries,132,60,11,8,37.69,3.15,0.62,L4,B,177,0.52,54.05,0.95,7,0.75,814,14.32,0.87,2024-04-07,53.85,0.68
 ITM10003,Automotive,346,46,13,5,33.69,2.79,0.21,L95,A,39,2.64,31.1,1.9,0,0.96,994,2.08,0.29,2024-01-27,92.04,0.488
